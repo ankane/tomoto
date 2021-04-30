@@ -11,7 +11,7 @@ void init_ct(Rice::Module& m) {
       [](size_t tw, size_t k, tomoto::Float alpha, tomoto::Float eta, size_t seed) {
         tomoto::CTArgs args;
         args.k = k;
-        args.alpha[0] = alpha;
+        args.alpha = {alpha};
         args.eta = eta;
         if (seed >= 0) {
           args.seed = seed;

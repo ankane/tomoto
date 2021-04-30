@@ -13,8 +13,8 @@ void init_mglda(Rice::Module& m) {
         args.k = k_g;
         args.kL = k_l;
         args.t = t;
-        args.alpha[0] = alpha_g;
-        args.alphaL[0] = alpha_l;
+        args.alpha = {alpha};
+        args.alphaL = {alpha_l};
         args.alphaMG = alpha_mg;
         args.alphaML = alpha_ml;
         args.eta = eta_g;

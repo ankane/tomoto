@@ -17,7 +17,7 @@ void init_slda(Rice::Module& m) {
         tomoto::SLDAArgs args;
         args.k = k;
         args.vars = vars;
-        args.alpha[0] = alpha;
+        args.alpha = {alpha};
         args.eta = eta;
         args.mu = mu;
         args.nuSq = nu_sq;

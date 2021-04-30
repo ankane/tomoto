@@ -12,7 +12,7 @@ void init_pa(Rice::Module& m) {
         tomoto::PAArgs args;
         args.k = k1;
         args.k2 = k2;
-        args.alpha[0] = alpha;
+        args.alpha = {alpha};
         args.eta = eta;
         if (seed >= 0) {
           args.seed = seed;

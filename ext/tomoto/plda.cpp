@@ -11,7 +11,7 @@ void init_plda(Rice::Module& m) {
       [](size_t tw, size_t latent_topics, tomoto::Float alpha, tomoto::Float eta, size_t seed) {
         tomoto::PLDAArgs args;
         args.numLatentTopics = latent_topics;
-        args.alpha[0] = alpha;
+        args.alpha = {alpha};
         args.eta = eta;
         if (seed >= 0) {
           args.seed = seed;

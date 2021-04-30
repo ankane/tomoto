@@ -14,7 +14,7 @@ void init_dt(Rice::Module& m) {
         tomoto::DTArgs args;
         args.k = k;
         args.t = t;
-        args.alpha[0] = alphaVar;
+        args.alpha = {alphaVar};
         args.eta = etaVar;
         args.phi = phiVar;
         args.shapeA = shapeA;

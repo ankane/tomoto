@@ -12,7 +12,7 @@ void init_gdmr(Rice::Module& m) {
         tomoto::GDMRArgs args;
         args.k = k;
         args.degrees = degrees;
-        args.alpha[0] = alpha;
+        args.alpha = {alpha, alpha};
         args.sigma = sigma;
         args.sigma0 = sigma0;
         args.eta = eta;

@@ -11,7 +11,7 @@ void init_hlda(Rice::Module& m) {
       [](size_t tw, size_t levelDepth, tomoto::Float alpha, tomoto::Float eta, tomoto::Float gamma, size_t seed) {
         tomoto::HLDAArgs args;
         args.k = levelDepth;
-        args.alpha[0] = alpha;
+        args.alpha = {alpha};
         args.eta = eta;
         args.gamma = gamma;
         if (seed >= 0) {

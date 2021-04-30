@@ -11,7 +11,7 @@ void init_dmr(Rice::Module& m) {
       [](size_t tw, size_t k, tomoto::Float alpha, tomoto::Float sigma, tomoto::Float eta, tomoto::Float alpha_epsilon, size_t seed) {
         tomoto::DMRArgs args;
         args.k = k;
-        args.alpha[0] = alpha;
+        args.alpha = {alpha};
         args.sigma = sigma;
         args.eta = eta;
         args.alphaEps = alpha_epsilon;
