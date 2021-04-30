@@ -17,7 +17,7 @@ void init_hpa(Rice::Module& m) {
         if (seed >= 0) {
           args.seed = seed;
         }
-        return tomoto::IHPAModel::create((tomoto::TermWeight)tw, args);
+        return tomoto::IHPAModel::create((tomoto::TermWeight)tw, false, args);
       }, Rice::Return().takeOwnership())
     .define_method(
       "alpha",
