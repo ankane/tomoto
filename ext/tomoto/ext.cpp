@@ -22,13 +22,13 @@ void Init_ext()
       "isa",
       []() {
         #ifdef __AVX2__
-          return "avx2";
+          return Rice::String("avx2");
         #elif defined(__AVX__)
-          return "avx";
+          return Rice::String("avx");
         #elif defined(__SSE2__) || defined(__x86_64__) || defined(_WIN64)
-          return "sse2";
+          return Rice::String("sse2");
         #else
-          return "none";
+          return Rice::String("none");
         #endif
       });
 
