@@ -8,11 +8,19 @@ void init_gdmr(Rice::Module& m) {
   Rice::define_class_under<tomoto::IGDMRModel, tomoto::IDMRModel>(m, "GDMR")
     .define_singleton_function(
       "_new",
-      [](size_t tw, size_t k, std::vector<uint64_t> degrees, tomoto::Float alpha, tomoto::Float sigma, tomoto::Float sigma0, tomoto::Float eta, tomoto::Float alpha_epsilon, int seed) {
-        if (seed < 0) {
-          seed = std::random_device{}();
+      [](size_t tw, size_t k, std::vector<uint64_t> degrees, tomoto::Float alpha, tomoto::Float sigma, tomoto::Float sigma0, tomoto::Float eta, tomoto::Float alpha_epsilon, size_t seed) {
+        GDMRArgs args;
+        args.k = k;
+        args.degrees = degrees;
+        args.alpha[0] = alpha;
+        args.sigma = sigma;
+        args.sigma0 = sigma0;
+        args.eta = eta;
+        args.alphaEps = alpha_epsilon;
+        if (seed >= 0) {
+          args.seed = seed;
         }
-        return tomoto::IGDMRModel::create((tomoto::TermWeight)tw, k, degrees, alpha, sigma, sigma0, eta, alpha_epsilon, seed);
+        return tomoto::IGDMRModel::create((tomoto::TermWeight)tw, args);
       }, Rice::Return().takeOwnership())
     .define_method(
       "_add_doc",
