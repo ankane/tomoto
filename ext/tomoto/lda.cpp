@@ -83,7 +83,7 @@ void init_lda(Rice::Module& m) {
         auto n = self.getNumDocs();
         for (size_t i = 0; i < n; i++) {
           auto v = DocumentObject(self.getDoc(i), &self);
-          res.push(Object(Rice::detail::To_Ruby<DocumentObject>::convert(v, true)));
+          res.push(Object(Rice::detail::To_Ruby<DocumentObject>().convert(v)));
         }
         return res;
       })
@@ -215,7 +215,7 @@ void init_lda(Rice::Module& m) {
         Array res;
         auto utf8 = Rice::Class(rb_cEncoding).call("const_get", "UTF_8");
         for (size_t i = 0; i < self.getV(); i++) {
-          VALUE value = Rice::detail::To_Ruby<std::string>::convert(dict.toWord(i));
+          VALUE value = Rice::detail::To_Ruby<std::string>().convert(dict.toWord(i));
           Object obj(value);
           res.push(obj.call("force_encoding", utf8));
         }
@@ -248,7 +248,7 @@ void init_lda(Rice::Module& m) {
         Array res;
         auto utf8 = Rice::Class(rb_cEncoding).call("const_get", "UTF_8");
         for (size_t i = 0; i < dict.size(); i++) {
-          VALUE value = Rice::detail::To_Ruby<std::string>::convert(dict.toWord(i));
+          VALUE value = Rice::detail::To_Ruby<std::string>().convert(dict.toWord(i));
           Object obj(value);
           res.push(obj.call("force_encoding", utf8));
         }
