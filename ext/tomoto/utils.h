@@ -16,7 +16,7 @@ namespace Rice::detail
     {
       auto a = rb_ary_new2(x.size());
       for (const auto& v : x) {
-        protect(rb_ary_push, a, To_Ruby<T>().convert(v));
+        detail::protect(rb_ary_push, a, To_Ruby<T>().convert(v));
       }
       return a;
     }
