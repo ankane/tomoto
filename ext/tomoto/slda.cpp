@@ -14,7 +14,7 @@ void init_slda(Rice::Module& m) {
         for (auto const& v : rb_vars) {
           vars.push_back((tomoto::ISLDAModel::GLM) Rice::detail::From_Ruby<int>::convert(v.value()));
         }
-        SLDAArgs args;
+        tomoto::SLDAArgs args;
         args.k = k;
         args.vars = vars;
         args.alpha[0] = alpha;

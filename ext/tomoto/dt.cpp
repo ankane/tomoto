@@ -11,7 +11,7 @@ void init_dt(Rice::Module& m) {
       [](size_t tw, size_t k, size_t t, tomoto::Float alphaVar, tomoto::Float etaVar, tomoto::Float phiVar, tomoto::Float shapeA, tomoto::Float shapeB, tomoto::Float shapeC) {
         // Rice only supports 10 arguments
         size_t seed = -1;
-        DTArgs args;
+        tomoto::DTArgs args;
         args.k = k;
         args.t = t;
         args.alpha[0] = alphaVar;

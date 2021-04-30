@@ -9,7 +9,7 @@ void init_mglda(Rice::Module& m) {
     .define_singleton_function(
       "_new",
       [](size_t tw, size_t k_g, size_t k_l, size_t t, tomoto::Float alpha_g, tomoto::Float alpha_l, tomoto::Float alpha_mg, tomoto::Float alpha_ml, tomoto::Float eta_g) {
-        MGLDAArgs args;
+        tomoto::MGLDAArgs args;
         args.k = k_g;
         args.kL = k_l;
         args.t = t;

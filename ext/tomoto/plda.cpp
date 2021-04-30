@@ -9,7 +9,7 @@ void init_plda(Rice::Module& m) {
     .define_singleton_function(
       "_new",
       [](size_t tw, size_t latent_topics, tomoto::Float alpha, tomoto::Float eta, size_t seed) {
-        PLDAArgs args;
+        tomoto::PLDAArgs args;
         args.numLatentTopics = latent_topics;
         args.alpha[0] = alpha;
         args.eta = eta;

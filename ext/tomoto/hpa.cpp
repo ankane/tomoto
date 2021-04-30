@@ -9,7 +9,7 @@ void init_hpa(Rice::Module& m) {
     .define_singleton_function(
       "_new",
       [](size_t tw, size_t k1, size_t k2, tomoto::Float alpha, tomoto::Float eta, size_t seed) {
-        HPAArgs args;
+        tomoto::HPAArgs args;
         args.k = k1;
         args.k2 = k2;
         args.alpha[0] = alpha;

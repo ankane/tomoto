@@ -9,7 +9,7 @@ void init_hlda(Rice::Module& m) {
     .define_singleton_function(
       "_new",
       [](size_t tw, size_t levelDepth, tomoto::Float alpha, tomoto::Float eta, tomoto::Float gamma, size_t seed) {
-        HLDAArgs args;
+        tomoto::HLDAArgs args;
         args.k = levelDepth;
         args.alpha[0] = alpha;
         args.eta = eta;

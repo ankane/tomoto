@@ -9,7 +9,7 @@ void init_dmr(Rice::Module& m) {
     .define_singleton_function(
       "_new",
       [](size_t tw, size_t k, tomoto::Float alpha, tomoto::Float sigma, tomoto::Float eta, tomoto::Float alpha_epsilon, size_t seed) {
-        DMRArgs args;
+        tomoto::DMRArgs args;
         args.k = k;
         args.alpha[0] = alpha;
         args.sigma = sigma;

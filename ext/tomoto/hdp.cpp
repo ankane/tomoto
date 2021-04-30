@@ -9,7 +9,7 @@ void init_hdp(Rice::Module& m) {
     .define_singleton_function(
       "_new",
       [](size_t tw, size_t k, tomoto::Float alpha, tomoto::Float eta, tomoto::Float gamma, size_t seed) {
-        HDPArgs args;
+        tomoto::HDPArgs args;
         args.k = k;
         args.alpha[0] = alpha;
         args.eta = eta;
