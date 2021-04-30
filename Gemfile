@@ -5,4 +5,4 @@ gemspec
 gem "rake"
 gem "rake-compiler"
 gem "minitest", ">= 5"
-gem "rice", github: "ankane/rice"
+gem "rice", github: "jasonroelofs/rice"
