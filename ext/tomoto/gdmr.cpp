@@ -24,9 +24,9 @@ void init_gdmr(Rice::Module& m) {
       }, Rice::Return().takeOwnership())
     .define_method(
       "_add_doc",
-      [](tomoto::IGDMRModel& self, std::vector<std::string> words, std::vector<tomoto::Float> metadata) {
+      *[](tomoto::IGDMRModel& self, std::vector<std::string> words, std::vector<tomoto::Float> numeric_metadata) {
         auto doc = buildDoc(words);
-        doc.misc["metadata"] = metadata;
+        doc.misc["numeric_metadata"] = numeric_metadata;
         return self.addDoc(doc);
       })
     .define_method(
